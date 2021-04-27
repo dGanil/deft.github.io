@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DEFT</title>
+
+	<!--   FONTS    -->
+	<link rel="stylesheet" href="fonts/euclid.css">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+
+	<!--   SCRIPTS  -->
+
+	<!--    META    -->
+
+
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+	<!--   STYLES   -->
+
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+	<div class="wrap">
+		<header class="header">
+			<nav class="navbar navbar-expand-lg">
+				<div class="container">
+					<a class="navbar-brand" href="#">
+						<img src="img/logo.png" alt="">
+					</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon">
+							<svg id="openMenu" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M10 10L20 10" stroke="#9B928E" stroke-width="2"/>
+								<path d="M0 19H20" stroke="#564F48" stroke-width="2"/>
+								<path d="M0 1H20" stroke="#564F48" stroke-width="2"/>
+							</svg>
+							<svg id="closeMenu" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1.64209 1.49997L21.1421 21" stroke="#564F48" stroke-width="2"/>
+								<path d="M1.64209 20.9999L21.1421 1.49991" stroke="#564F48" stroke-width="2"/>
+							</svg>
+						</span>
+					</button>
+
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<!-- <li class="nav-item">
+								<a class="nav-link" href="#">Каталог</a>
+							</li> -->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Каталог
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="category.html">Категория 1</a>
+									<a class="dropdown-item" href="category.html">Категория 2</a>
+									<a class="dropdown-item" href="category.html">Категория 3</a>
+								</div>
+							</li>
+							<li class="nav-item active">
+								<a class="nav-link" href="services.html">Услуги</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="franchise.html">Франшиза</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="about.html">О нас</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="coop.html">Сотрудничество</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="blog.html">Блог</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="contacts.html">Контакты</a>
+							</li>
+							
+							
+						</ul>
+						<div class="contacts header__contacts">
+							<a href="tel: +75698565489" class="contacts__phone">+7 569 856 54 89</a>
+							<a href="#" class="contacts__icon">
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M0 0V20H20V0H0ZM18.0338 3.52425L15.3039 16.6557C15.2381 16.9673 14.8782 17.1077 14.6193 16.919L10.8931 14.2155C10.6649 14.0531 10.3577 14.0619 10.1426 14.2374L8.07549 15.9184C7.8341 16.1159 7.47421 16.0061 7.38205 15.7077L5.94689 11.095L2.2427 9.71253C1.86526 9.57209 1.86526 9.04104 2.23831 8.8962L17.4501 3.02831C17.7705 2.90542 18.104 3.18631 18.0338 3.52425Z" fill="#7D6E64"/>
+									<path d="M13.3905 7.11434L8.9358 11.253C8.7778 11.3979 8.67685 11.5954 8.65052 11.806L8.49691 12.9296C8.47497 13.0788 8.2643 13.0964 8.2248 12.9471L7.64108 10.8975C7.57525 10.6649 7.67181 10.4148 7.87808 10.2875L13.2764 6.96512C13.3729 6.90368 13.4739 7.03534 13.3905 7.11434Z" fill="#7D6E64"/>
+								</svg>
+							</a>
+							<a href="#" class="contacts__icon contacts__icon_2">
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M13.5659 11.7665L13.4956 12.1045C13.4122 12.4863 13.1884 12.8242 12.8593 13.0349C12.4423 13.2982 11.9069 13.4299 11.2222 13.2368C9.10239 12.6355 7.89985 11.2311 7.25908 10.3533C6.61392 9.47553 6.36814 8.59776 6.52614 7.88238C6.63586 7.3996 6.98697 7.03094 7.20641 6.84222C7.31613 6.75005 7.45219 6.70177 7.59702 6.71055L8.04907 6.73689C8.13685 6.74127 8.21585 6.79833 8.25096 6.87733L8.90929 8.4222C8.9444 8.50559 8.93123 8.60215 8.86979 8.66798L8.29485 9.3307C8.24657 9.38336 8.24218 9.46236 8.2729 9.52381C9.02778 10.9809 10.4103 11.5602 10.8228 11.7051C10.893 11.7314 10.972 11.7051 11.0159 11.648L11.6172 10.8668C11.683 10.779 11.8015 10.7527 11.9025 10.7966L13.4342 11.5032C13.5351 11.5515 13.5878 11.6612 13.5659 11.7665Z" fill="#7D6E64"/>
+									<path d="M0 0V20H20V0H0ZM10.011 16.9717C8.81282 16.9717 7.6366 16.6645 6.59644 16.0808L3.00636 17.0024L3.98508 13.5221C3.35308 12.4512 3.02392 11.2355 3.02392 9.98464C3.02392 6.13123 6.15756 2.99759 10.011 2.99759C13.8644 2.99759 16.998 6.13123 16.998 9.98464C16.998 13.8381 13.86 16.9717 10.011 16.9717Z" fill="#7D6E64"/>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+			</nav>
+		</header>
+		<main class="content">
+			<section class="services__head">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-lg-6">
+							
+							<h2 class="title title_white text-left">Наши услуги</h2>
+							<p class="text services__text text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+						</div>
+					</div>
+					<div class="row offers offers-show">
+						<div class="col-md-12 col-lg-4">
+							<div class="offers__item">
+								<img src="img/guarantee.png" alt="">
+								<p class="text offers__text">Гарантия на установку дверей нашими специалистами - 3 года</p>
+							</div>
+						</div>
+						<div class="col-md-12 col-lg-4">
+							<div class="offers__item">
+								<img src="img/guarantee.png" alt="">
+								<p class="text offers__text">Гарантия на установку дверей нашими специалистами - 3 года</p>
+							</div>
+						</div>
+						<div class="col-md-12 col-lg-4">
+							<div class="offers__item">
+								<img src="img/guarantee.png" alt="">
+								<p class="text offers__text">Гарантия на установку дверей нашими специалистами - 3 года</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="row offers-hidden">
+						<div class="col-12">
+							<div class="swiper-container_offers">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="offers__item">
+											<img src="img/guarantee.png" alt="">
+											<p class="text offers__text">Гарантия на установку дверей нашими специалистами - 3 года</p>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="offers__item">
+											<img src="img/guarantee.png" alt="">
+											<p class="text offers__text">Гарантия на установку дверей нашими специалистами - 3 года</p>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="offers__item">
+											<img src="img/guarantee.png" alt="">
+											<p class="text offers__text">Гарантия на установку дверей нашими специалистами - 3 года</p>
+										</div>
+									</div>
+									
+									<!-- Add Arrows -->
+									
+								</div>
+
+								<div class="swiper-button-prev">
+									<svg width="47" height="8" viewBox="0 0 47 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M0.646446 3.64645C0.451183 3.84171 0.451183 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646446 3.64645ZM47 3.5L1 3.5V4.5L47 4.5V3.5Z" fill="white"/>
+									</svg>
+
+								</div>
+								<div class="swiper-button-next">
+									<svg width="47" height="8" viewBox="0 0 47 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M46.3536 4.35355C46.5488 4.15829 46.5488 3.84171 46.3536 3.64645L43.1716 0.464466C42.9763 0.269204 42.6597 0.269204 42.4645 0.464466C42.2692 0.659728 42.2692 0.976311 42.4645 1.17157L45.2929 4L42.4645 6.82843C42.2692 7.02369 42.2692 7.34027 42.4645 7.53553C42.6597 7.7308 42.9763 7.7308 43.1716 7.53553L46.3536 4.35355ZM0 4.5L46 4.5V3.5L0 3.5L0 4.5Z" fill="white"/>
+									</svg>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="service">
+				<div class="container">
+					<div class="row service__heading">
+						<div class="col-md-12">
+							<h2 class="title text-left">Установка дверей</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-lg-6">
+							<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.</p>
+						</div>
+						<div class="col-md-12 col-lg-6">
+							<p class="title service__cost text-right">от 15 000 руб.</p>
+							<p class="text service__text text-right">Срок выполнения услуги: 2 - 4 дня</p>
+						</div>
+					</div>
+
+					<div class="row align-items-center service__body">
+						<div class="col-md-6">
+							<div class="carte">
+								<p class="heading">Что входит в услугу:</p>
+								<ul class="checks">
+									<li class="checks__item">
+										<span class="checks__icon">
+											<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+												<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+											</svg>
+										</span>
+										<span class="checks__text">Выезд специалиста и замеры</span>
+									</li>
+									<li class="checks__item">
+										<span class="checks__icon">
+											<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+												<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+											</svg>
+										</span>
+										<span class="checks__text">Подготовка места установки дверей</span>
+									</li>
+									<li class="checks__item">
+										<span class="checks__icon">
+											<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+												<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+											</svg>
+										</span>
+										<span class="checks__text">Доставка и установка двери</span>
+									</li>
+									<li class="checks__item">
+										<span class="checks__icon">
+											<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+												<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+											</svg>
+										</span>
+										<span class="checks__text">Уборка места установки</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-6 service__sub">
+							<div class="form">
+								<input type="phone" class="field" placeholder="Ваш телефон">
+								<button class="button" type="submit">Заказать замер</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<ul class="service-steps">
+								<li class="service-steps__item">
+									<P class="text service-steps__text">Заказываете замерщика в удобное вам время</p>
+										<div class="service-steps__icon">01.</div>
+									</li>
+									<li class="service-steps__item">
+										<P class="text service-steps__text">Оплачиваете стоимость дверей и услугу установки</p>
+											<div class="service-steps__icon">02.</div>
+										</li>
+										<li class="service-steps__item">
+											<P class="text service-steps__text">Привозим двери в усновленное время</p>
+												<div class="service-steps__icon">03.</div>
+											</li>
+											<li class="service-steps__item">
+												<P class="text service-steps__text">Производим монтаж дверей и другого оборудования</p>
+													<div class="service-steps__icon">04.</div>
+												</li>
+												<li class="service-steps__item">
+													<P class="text service-steps__text">Убираем за собой место установки и вручаем гарантию</p>
+														<div class="service-steps__icon">05.</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+			</section>
+
+
+			<section class="service service_2">
+				<!-- <div class="service__bg"> -->
+					<div class="container">
+						<div class="row service__heading">
+							<div class="col-md-12">
+								<h2 class="title text-left">Установка дверей</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.</p>
+							</div>
+							<div class="col-md-6">
+								<p class="title service__cost text-right">от 15 000 руб.</p>
+								<p class="text service__text text-right">Срок выполнения услуги: 2 - 4 дня</p>
+							</div>
+						</div>
+
+						<div class="row align-items-center service__body">
+							<div class="col-md-6">
+								<div class="carte">
+									<p class="heading">Что входит в услугу:</p>
+									<ul class="checks">
+										<li class="checks__item">
+											<span class="checks__icon">
+												<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+													<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+												</svg>
+											</span>
+											<span class="checks__text">Выезд специалиста и замеры</span>
+										</li>
+										<li class="checks__item">
+											<span class="checks__icon">
+												<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+													<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+												</svg>
+											</span>
+											<span class="checks__text">Подготовка места установки дверей</span>
+										</li>
+										<li class="checks__item">
+											<span class="checks__icon">
+												<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+													<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+												</svg>
+											</span>
+											<span class="checks__text">Доставка и установка двери</span>
+										</li>
+										<li class="checks__item">
+											<span class="checks__icon">
+												<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+													<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+												</svg>
+											</span>
+											<span class="checks__text">Уборка места установки</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-6 ">
+								<div class="form">
+									<input type="phone" class="field" placeholder="Ваш телефон">
+									<button class="button" type="submit">Заказать замер</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<ul class="service-steps">
+									<li class="service-steps__item">
+										<P class="text service-steps__text">Заказываете замерщика в удобное вам время</p>
+											<div class="service-steps__icon">01.</div>
+										</li>
+										<li class="service-steps__item">
+											<P class="text service-steps__text">Оплачиваете стоимость дверей и услугу установки</p>
+												<div class="service-steps__icon">02.</div>
+											</li>
+											<li class="service-steps__item">
+												<P class="text service-steps__text">Привозим двери в усновленное время</p>
+													<div class="service-steps__icon">03.</div>
+												</li>
+												<li class="service-steps__item">
+													<P class="text service-steps__text">Производим монтаж дверей и другого оборудования</p>
+														<div class="service-steps__icon">04.</div>
+													</li>
+													<li class="service-steps__item">
+														<P class="text service-steps__text">Убираем за собой место установки и вручаем гарантию</p>
+															<div class="service-steps__icon">05.</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<!-- </div> -->
+			</section>
+
+
+			<section class="service service_3">
+				<div class="container">
+					<div class="row service__heading">
+						<div class="col-md-12">
+							<h2 class="title text-left">Установка дверей</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.</p>
+						</div>
+						<div class="col-md-6">
+							<p class="title service__cost text-right">от 15 000 руб.</p>
+							<p class="text service__text text-right">Срок выполнения услуги: 2 - 4 дня</p>
+						</div>
+					</div>
+
+					<div class="row align-items-center service__body">
+						<div class="col-md-6">
+							<div class="carte">
+								<p class="heading">Что входит в услугу:</p>
+								<ul class="checks">
+									<li class="checks__item">
+										<span class="checks__icon">
+											<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+												<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+											</svg>
+										</span>
+										<span class="checks__text">Выезд специалиста и замеры</span>
+									</li>
+									<li class="checks__item">
+										<span class="checks__icon">
+											<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+												<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+											</svg>
+										</span>
+										<span class="checks__text">Подготовка места установки дверей</span>
+									</li>
+									<li class="checks__item">
+										<span class="checks__icon">
+											<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+												<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+											</svg>
+										</span>
+										<span class="checks__text">Доставка и установка двери</span>
+									</li>
+									<li class="checks__item">
+										<span class="checks__icon">
+											<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+												<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+											</svg>
+										</span>
+										<span class="checks__text">Уборка места установки</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-6 ">
+							<div class="form">
+								<input type="phone" class="field" placeholder="Ваш телефон">
+								<button class="button" type="submit">Заказать замер</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<ul class="service-steps">
+								<li class="service-steps__item">
+									<P class="text service-steps__text">Заказываете замерщика в удобное вам время</p>
+										<div class="service-steps__icon">01.</div>
+									</li>
+									<li class="service-steps__item">
+										<P class="text service-steps__text">Оплачиваете стоимость дверей и услугу установки</p>
+											<div class="service-steps__icon">02.</div>
+										</li>
+										<li class="service-steps__item">
+											<P class="text service-steps__text">Привозим двери в усновленное время</p>
+												<div class="service-steps__icon">03.</div>
+											</li>
+											<li class="service-steps__item">
+												<P class="text service-steps__text">Производим монтаж дверей и другого оборудования</p>
+													<div class="service-steps__icon">04.</div>
+												</li>
+												<li class="service-steps__item">
+													<P class="text service-steps__text">Убираем за собой место установки и вручаем гарантию</p>
+														<div class="service-steps__icon">05.</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+			</section>
+
+			<section class="warranty">
+				<div class="container">
+					<div class="row warranty__head">
+						<div class="col-md-12">
+							<h2 class="title">Гарантии</h2>
+
+						</div>
+					</div>
+					<div class="row warranty-show">
+						<div class="col-md-12 col-lg-4">
+							<img src="img/guarantee-2.png" alt="">
+							<p class="heading warranty__name">Гарантия на установку дверей нашими специалистами - 3 года</p>
+							<p class="text warranty__text">
+								Lorem ipsum dolor sit amet, consectetur bibendum laoreet. Proin gravida dolor amet lacus accumsan et viverra justo adipiscing elit. Aenean euismod.
+							</p>
+						</div>
+						<div class="col-md-12 col-lg-4">
+							<img src="img/guarantee-2.png" alt="">
+							<p class="heading warranty__name">Гарантия на установку дверей нашими специалистами - 3 года</p>
+							<p class="text warranty__text">
+								Lorem ipsum dolor sit amet, consectetur bibendum laoreet. Proin gravida dolor amet lacus accumsan et viverra justo adipiscing elit. Aenean euismod.
+							</p>
+						</div>
+						<div class="col-md-12 col-lg-4">
+							<img src="img/guarantee-2.png" alt="">
+							<p class="heading warranty__name">Гарантия на установку дверей нашими специалистами - 3 года</p>
+							<p class="text warranty__text">
+								Lorem ipsum dolor sit amet, consectetur bibendum laoreet. Proin gravida dolor amet lacus accumsan et viverra justo adipiscing elit. Aenean euismod.
+							</p>
+						</div>
+					</div>
+
+					<div class="row warranty-hidden">
+						<div class="col-12">
+							<div class="swiper-container_warranty">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<img src="img/guarantee-2.png" alt="">
+										<p class="heading warranty__name">Гарантия на установку дверей нашими специалистами - 3 года</p>
+										<p class="text warranty__text">
+											Lorem ipsum dolor sit amet, consectetur bibendum laoreet. Proin gravida dolor amet lacus accumsan et viverra justo adipiscing elit. Aenean euismod.
+										</p>
+									</div>
+									<div class="swiper-slide">
+										<img src="img/guarantee-2.png" alt="">
+										<p class="heading warranty__name">Гарантия на установку дверей нашими специалистами - 3 года</p>
+										<p class="text warranty__text">
+											Lorem ipsum dolor sit amet, consectetur bibendum laoreet. Proin gravida dolor amet lacus accumsan et viverra justo adipiscing elit. Aenean euismod.
+										</p>
+									</div>
+									<div class="swiper-slide">
+										<img src="img/guarantee-2.png" alt="">
+										<p class="heading warranty__name">Гарантия на установку дверей нашими специалистами - 3 года</p>
+										<p class="text warranty__text">
+											Lorem ipsum dolor sit amet, consectetur bibendum laoreet. Proin gravida dolor amet lacus accumsan et viverra justo adipiscing elit. Aenean euismod.
+										</p>
+									</div>
+									
+									<!-- Add Arrows -->
+									
+								</div>
+
+								<div class="swiper-button-prev">
+									<svg width="47" height="8" viewBox="0 0 47 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M0.646446 3.64645C0.451183 3.84171 0.451183 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646446 3.64645ZM47 3.5L1 3.5V4.5L47 4.5V3.5Z" fill="#564F48"/>
+									</svg>
+
+								</div>
+								<div class="swiper-button-next">
+									<svg width="47" height="8" viewBox="0 0 47 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M46.3536 4.35355C46.5488 4.15829 46.5488 3.84171 46.3536 3.64645L43.1716 0.464466C42.9763 0.269204 42.6597 0.269204 42.4645 0.464466C42.2692 0.659728 42.2692 0.976311 42.4645 1.17157L45.2929 4L42.4645 6.82843C42.2692 7.02369 42.2692 7.34027 42.4645 7.53553C42.6597 7.7308 42.9763 7.7308 43.1716 7.53553L46.3536 4.35355ZM0 4.5L46 4.5V3.5L0 3.5L0 4.5Z" fill="#564F48"/>
+									</svg>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="go-constructor">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-md-12 col-lg-7">
+							<h2 class="title title_small">
+								Хотите проявить свою индивидуальность
+								и создать свой уникальный стиль дверей?
+							</h2>
+							<p class="text">Воспользуйтесь нашим онлайн-конструктором</p>
+						</div>
+						<div class="col-md-12 offset-lg-1 col-lg-4 text-right">
+							<a href="#" class="button button_white">Перейти в конструктор</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+
+
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-6 col-md-2 col-lg-3">
+						<img src="img/logo_2.png" alt="">
+						<div class="copy">© 2021 DEFT</div>
+					</div>
+					<div class="d-none d-md-block col-md-4 col-lg-6">
+						<ul class="footer-menu">
+							<li class="footer__item">
+								<a href="catalog.html" class="footer__link">Каталог</a>
+							</li>
+							<li class="footer__item">
+								<a href="services.html" class="footer__link">Услуги</a>
+							</li>
+							<li class="footer__item">
+								<a href="franchise.html" class="footer__link">Франшиза</a>
+							</li>
+							<li class="footer__item">
+								<a href="contacts.html" class="footer__link">Контакты</a>
+							</li>
+							<li class="footer__item">
+								<a href="blog.html" class="footer__link">Блог</a>
+							</li>
+							<li class="footer__item">
+								<a href="about.html" class="footer__link">О нас</a>
+							</li>
+							<li class="footer__item">
+								<a href="coop.html" class="footer__link">Сотрудничество</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-6 col-md-6 col-lg-3 text-right">
+						<div class="contacts footer__contacts">
+							<a href="tel: +75698565489" class="contacts__phone">+7 569 856 54 89</a>
+							<a href="#" class="contacts__icon">
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M0 0V20H20V0H0ZM18.0338 3.52425L15.3039 16.6557C15.2381 16.9673 14.8782 17.1077 14.6193 16.919L10.8931 14.2155C10.6649 14.0531 10.3577 14.0619 10.1426 14.2374L8.07549 15.9184C7.8341 16.1159 7.47421 16.0061 7.38205 15.7077L5.94689 11.095L2.2427 9.71253C1.86526 9.57209 1.86526 9.04104 2.23831 8.8962L17.4501 3.02831C17.7705 2.90542 18.104 3.18631 18.0338 3.52425Z" fill="white"></path>
+									<path d="M13.3905 7.11434L8.9358 11.253C8.7778 11.3979 8.67685 11.5954 8.65052 11.806L8.49691 12.9296C8.47497 13.0788 8.2643 13.0964 8.2248 12.9471L7.64108 10.8975C7.57525 10.6649 7.67181 10.4148 7.87808 10.2875L13.2764 6.96512C13.3729 6.90368 13.4739 7.03534 13.3905 7.11434Z" fill="white"></path>
+								</svg>
+							</a>
+							<a href="#" class="contacts__icon contacts__icon_2">
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M13.5659 11.7665L13.4956 12.1045C13.4122 12.4863 13.1884 12.8242 12.8593 13.0349C12.4423 13.2982 11.9069 13.4299 11.2222 13.2368C9.10239 12.6355 7.89985 11.2311 7.25908 10.3533C6.61392 9.47553 6.36814 8.59776 6.52614 7.88238C6.63586 7.3996 6.98697 7.03094 7.20641 6.84222C7.31613 6.75005 7.45219 6.70177 7.59702 6.71055L8.04907 6.73689C8.13685 6.74127 8.21585 6.79833 8.25096 6.87733L8.90929 8.4222C8.9444 8.50559 8.93123 8.60215 8.86979 8.66798L8.29485 9.3307C8.24657 9.38336 8.24218 9.46236 8.2729 9.52381C9.02778 10.9809 10.4103 11.5602 10.8228 11.7051C10.893 11.7314 10.972 11.7051 11.0159 11.648L11.6172 10.8668C11.683 10.779 11.8015 10.7527 11.9025 10.7966L13.4342 11.5032C13.5351 11.5515 13.5878 11.6612 13.5659 11.7665Z" fill="white"></path>
+									<path d="M0 0V20H20V0H0ZM10.011 16.9717C8.81282 16.9717 7.6366 16.6645 6.59644 16.0808L3.00636 17.0024L3.98508 13.5221C3.35308 12.4512 3.02392 11.2355 3.02392 9.98464C3.02392 6.13123 6.15756 2.99759 10.011 2.99759C13.8644 2.99759 16.998 6.13123 16.998 9.98464C16.998 13.8381 13.86 16.9717 10.011 16.9717Z" fill="white"></path>
+								</svg>
+							</a>
+						</div>
+						<p class="adress">Москва, ул. Саксаганского, 121</p>
+						<p class="adress">help-center@website.com</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+
+			<!--   SCRIPTS  -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+			<script src="js/jquery.maskedinput.min.js"></script>
+
+			<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+			<script>
+				var swiper = new Swiper('.swiper-container_offers', {
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+			});
+
+
+				var swiper = new Swiper('.swiper-container_warranty', {
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+			});
+			</script>
+
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+			<script src="js/main.js"></script>
+		</body>
+</html>

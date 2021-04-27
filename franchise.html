@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DEFT</title>
+
+	<!--   FONTS    -->
+	<link rel="stylesheet" href="fonts/euclid.css">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+
+	<!--   SCRIPTS  -->
+
+	<!--    META    -->
+
+
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+	<!--   STYLES   -->
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div class="wrap">
+		<header class="header">
+			<nav class="navbar navbar-expand-lg">
+				<div class="container">
+					<a class="navbar-brand" href="#">
+						<img src="img/logo.png" alt="">
+					</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon">
+							<svg id="openMenu" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M10 10L20 10" stroke="#9B928E" stroke-width="2"/>
+								<path d="M0 19H20" stroke="#564F48" stroke-width="2"/>
+								<path d="M0 1H20" stroke="#564F48" stroke-width="2"/>
+							</svg>
+							<svg id="closeMenu" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1.64209 1.49997L21.1421 21" stroke="#564F48" stroke-width="2"/>
+								<path d="M1.64209 20.9999L21.1421 1.49991" stroke="#564F48" stroke-width="2"/>
+							</svg>
+						</span>
+					</button>
+
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<!-- <li class="nav-item">
+								<a class="nav-link" href="#">Каталог</a>
+							</li> -->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Каталог
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="category.html">Категория 1</a>
+									<a class="dropdown-item" href="category.html">Категория 2</a>
+									<a class="dropdown-item" href="category.html">Категория 3</a>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="services.html">Услуги</a>
+							</li>
+							<li class="nav-item active">
+								<a class="nav-link" href="franchise.html">Франшиза</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="about.html">О нас</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="coop.html">Сотрудничество</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="blog.html">Блог</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="contacts.html">Контакты</a>
+							</li>
+							
+							
+						</ul>
+						<div class="contacts header__contacts">
+							<a href="tel: +75698565489" class="contacts__phone">+7 569 856 54 89</a>
+							<a href="#" class="contacts__icon">
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M0 0V20H20V0H0ZM18.0338 3.52425L15.3039 16.6557C15.2381 16.9673 14.8782 17.1077 14.6193 16.919L10.8931 14.2155C10.6649 14.0531 10.3577 14.0619 10.1426 14.2374L8.07549 15.9184C7.8341 16.1159 7.47421 16.0061 7.38205 15.7077L5.94689 11.095L2.2427 9.71253C1.86526 9.57209 1.86526 9.04104 2.23831 8.8962L17.4501 3.02831C17.7705 2.90542 18.104 3.18631 18.0338 3.52425Z" fill="#7D6E64"/>
+									<path d="M13.3905 7.11434L8.9358 11.253C8.7778 11.3979 8.67685 11.5954 8.65052 11.806L8.49691 12.9296C8.47497 13.0788 8.2643 13.0964 8.2248 12.9471L7.64108 10.8975C7.57525 10.6649 7.67181 10.4148 7.87808 10.2875L13.2764 6.96512C13.3729 6.90368 13.4739 7.03534 13.3905 7.11434Z" fill="#7D6E64"/>
+								</svg>
+							</a>
+							<a href="#" class="contacts__icon contacts__icon_2">
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M13.5659 11.7665L13.4956 12.1045C13.4122 12.4863 13.1884 12.8242 12.8593 13.0349C12.4423 13.2982 11.9069 13.4299 11.2222 13.2368C9.10239 12.6355 7.89985 11.2311 7.25908 10.3533C6.61392 9.47553 6.36814 8.59776 6.52614 7.88238C6.63586 7.3996 6.98697 7.03094 7.20641 6.84222C7.31613 6.75005 7.45219 6.70177 7.59702 6.71055L8.04907 6.73689C8.13685 6.74127 8.21585 6.79833 8.25096 6.87733L8.90929 8.4222C8.9444 8.50559 8.93123 8.60215 8.86979 8.66798L8.29485 9.3307C8.24657 9.38336 8.24218 9.46236 8.2729 9.52381C9.02778 10.9809 10.4103 11.5602 10.8228 11.7051C10.893 11.7314 10.972 11.7051 11.0159 11.648L11.6172 10.8668C11.683 10.779 11.8015 10.7527 11.9025 10.7966L13.4342 11.5032C13.5351 11.5515 13.5878 11.6612 13.5659 11.7665Z" fill="#7D6E64"/>
+									<path d="M0 0V20H20V0H0ZM10.011 16.9717C8.81282 16.9717 7.6366 16.6645 6.59644 16.0808L3.00636 17.0024L3.98508 13.5221C3.35308 12.4512 3.02392 11.2355 3.02392 9.98464C3.02392 6.13123 6.15756 2.99759 10.011 2.99759C13.8644 2.99759 16.998 6.13123 16.998 9.98464C16.998 13.8381 13.86 16.9717 10.011 16.9717Z" fill="#7D6E64"/>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+			</nav>
+		</header>
+		<main class="content">
+			<section class="franchise-head">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-lg-6">
+							<h2 class="title title_white franchise__title">Зарабатывайте вместе с нами от 1 500 000 р. в год</h2>
+							<p class="text franchise__text text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. <span>Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span></p>
+							<div class="buttons-column">
+								<input type="phone" class="field field_white" placeholder="Ваш телефон">
+								<a href="#" class="button">Заказать замер</a>
+							</div>
+						</div>
+						<div class="col-md-0 col-lg-5 offset-lg-1">
+							<ul class="checks franchise-checks franchise-checks_1">
+								<li class="checks__item">
+									<span class="checks__icon">
+										<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+											<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+										</svg>
+									</span>
+									<span class="checks__text">Больше 2000 людей заказывают двери в городе каждый месяц</span>
+								</li>
+								<li class="checks__item">
+									<span class="checks__icon">
+										<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+											<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+										</svg>
+									</span>
+									<span class="checks__text">Больше 2000 людей заказывают двери в городе каждый месяц</span>
+								</li>
+								<li class="checks__item">
+									<span class="checks__icon">
+										<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+											<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+										</svg>
+									</span>
+									<span class="checks__text">Больше 2000 людей заказывают двери в городе каждый месяц</span>
+								</li>
+								<li class="checks__item">
+									<span class="checks__icon">
+										<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+											<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+										</svg>
+									</span>
+									<span class="checks__text">Больше 2000 людей заказывают двери в городе каждый месяц</span>
+								</li>
+
+							</ul>
+							<a href="#" class="play-franchise">
+								<svg width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M33 8C19.2142 8 8 19.2152 8 33C8 46.7848 19.2142 58 33 58C46.7858 58 58 46.7848 58 33C58 19.2152 46.7858 8 33 8ZM33 55.9167C20.3637 55.9167 10.0833 45.6363 10.0833 33C10.0833 20.3637 20.3637 10.0833 33 10.0833C45.6363 10.0833 55.9167 20.3637 55.9167 33C55.9167 45.6363 45.6363 55.9167 33 55.9167Z" fill="white"/>
+									<path opacity="0.2" d="M33 0C14.8027 0 0 14.8041 0 33C0 51.1959 14.8027 66 33 66C51.1973 66 66 51.1959 66 33C66 14.8041 51.1973 0 33 0ZM33 63.25C16.32 63.25 2.74996 49.68 2.74996 33C2.74996 16.32 16.32 2.74996 33 2.74996C49.68 2.74996 63.25 16.32 63.25 33C63.25 49.68 49.68 63.25 33 63.25Z" fill="white"/>
+									<path d="M27.5 42.5V23.5L42.5 33L27.5 42.5Z" fill="white"/>
+									<path d="M42.9386 32.1241L28.3553 22.7491C28.0358 22.5407 27.6229 22.5294 27.2933 22.7105C26.9575 22.8936 26.75 23.2436 26.75 23.625V42.375C26.75 42.7565 26.9575 43.1065 27.2933 43.2896C27.4479 43.374 27.6208 43.4167 27.7917 43.4167C27.987 43.4167 28.1844 43.3617 28.3553 43.2509L42.9386 33.8759C43.2356 33.6847 43.4167 33.354 43.4167 33C43.4167 32.646 43.2356 32.3155 42.9386 32.1241ZM28.8333 40.4666V25.5334L40.4483 33L28.8333 40.4666Z" fill="white"/>
+								</svg>
+								<p class="play-franchise__text">Смотреть презентацию</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="franchise-list">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h2 class="title">Условия франшизы</h2>
+						</div>
+					</div>
+
+					<div class="row steps">
+						<div class="col-lg-3 col-md-6 franshise-list__item">
+							<div class="steps__icon">
+								<svg width="75" height="84" viewBox="0 0 75 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M53.2336 60.8426L53.1836 60.9093V60.9926V68.57C53.1836 69.6123 53.795 70.5678 54.7416 71.0045L72.9897 79.4253C73.9204 79.8548 74.4265 80.8735 74.2067 81.8745C73.9868 82.875 73.1005 83.5881 72.0756 83.5881H3.13271C2.10843 83.5881 1.22211 82.8751 1.00224 81.8746C0.782359 80.8735 1.28858 79.8548 2.21864 79.4253L20.4673 71.0045C21.4139 70.5678 22.0253 69.6123 22.0253 68.5693V60.992V60.9086L21.9753 60.8419C19.528 57.58 18.0771 53.5308 18.0771 49.1491V35.53V35.28H17.8271H12.6978C11.4934 35.28 10.5162 34.3033 10.5162 33.0984C10.5162 31.8934 11.4934 30.9167 12.6978 30.9167H14.7407H14.9907V30.6667V28.1521C14.9907 20.4014 18.9114 13.5488 24.8743 9.47207L24.9832 9.39762V9.26569V7.72059C24.9832 6.5156 25.9604 5.53894 27.1648 5.53894C28.079 5.53894 28.861 6.1014 29.1857 6.89974L29.2781 7.12696L29.5071 7.03888C31.3057 6.34685 33.2139 5.87778 35.1992 5.66672L35.4228 5.64295V5.41812V3.26954C35.4228 2.0645 36.3994 1.08789 37.6045 1.08789C38.8089 1.08789 39.7861 2.06455 39.7861 3.26954V5.41812V5.64295L40.0097 5.66672C41.9944 5.87778 43.9032 6.34685 45.7024 7.0395L45.9314 7.12764L46.0238 6.90037C46.3486 6.10193 47.1307 5.53894 48.0447 5.53894C49.2497 5.53894 50.2263 6.51555 50.2263 7.72059V9.26696V9.39888L50.3352 9.47334C56.2981 13.55 60.2176 20.4021 60.2176 28.1527V30.6667V30.9167H60.4676H62.5105C63.7154 30.9167 64.6921 31.8939 64.6921 33.0984C64.6921 34.3034 63.7155 35.28 62.5105 35.28H57.3812H57.1312V35.53V49.1491C57.1312 53.5314 55.6802 57.58 53.2336 60.8426ZM25.6785 71.6415L25.6396 71.7218L25.6602 71.8086C25.8447 72.5839 26.2867 73.9258 27.3093 75.2325C29.397 77.9013 32.8841 79.2248 37.6051 79.2248C42.3329 79.2248 45.8397 77.8966 47.9626 75.2205C48.9345 73.9951 49.3978 72.7403 49.6121 71.947L49.6372 71.8539L49.5933 71.7681C49.0953 70.7935 48.8203 69.7008 48.8203 68.57V65.5988V65.1308L48.4313 65.391C45.3308 67.4649 41.6067 68.6759 37.6045 68.6759C33.6023 68.6759 29.8782 67.4649 26.7776 65.391L26.3886 65.1308V65.5988V68.57C26.3886 69.6524 26.1362 70.6993 25.6785 71.6415ZM24.9838 15.5823V14.9686L24.555 15.4076C21.3395 18.6988 19.3539 23.1979 19.3539 28.1527V30.6667V30.9167H19.6039H55.6043H55.8543V30.6667V28.1527C55.8543 23.1985 53.8694 18.7001 50.6552 15.4089L50.2263 14.9697V15.5835V19.5267C50.2263 20.7317 49.2491 21.7084 48.0447 21.7084C46.8397 21.7084 45.8631 20.7318 45.8631 19.5267V12.0355V11.8808L45.7246 11.8118C43.9789 10.9411 42.0757 10.3414 40.0697 10.0691L39.7861 10.0307V10.3169V22.5099C39.7861 23.7143 38.8089 24.6916 37.6045 24.6916C36.3995 24.6916 35.4228 23.7144 35.4228 22.5099V10.3169V10.0307L35.1392 10.0691C33.1333 10.3414 31.2301 10.9405 29.4849 11.8112L29.3465 11.8802V12.0349V19.5267C29.3465 20.7318 28.3698 21.7084 27.1655 21.7084C25.9604 21.7084 24.9838 20.7318 24.9838 19.5267V15.5823ZM52.7679 35.53V35.28H52.5179H22.6904H22.4404V35.53V49.1491C22.4404 57.5105 29.2425 64.3126 37.6045 64.3126C45.9658 64.3126 52.7679 57.5105 52.7679 49.1491V35.53ZM22.2553 75.2606L22.1509 75.0326L21.9232 75.1377L14.1008 78.7478L14.2056 79.2248H24.4482H25.0237L24.631 78.8041C24.2972 78.4467 23.976 78.067 23.6732 77.6588L23.6731 77.6586C23.0646 76.8395 22.604 76.0221 22.2553 75.2606ZM50.6238 78.8032L50.226 79.2248H50.8056H61.0033L61.1081 78.7478L53.349 75.1674L53.1236 75.0634L53.018 75.2881C52.6622 76.045 52.1959 76.8575 51.5825 77.6711L51.7821 77.8216L51.5825 77.6711C51.2783 78.0747 50.9569 78.4501 50.6238 78.8032Z" fill="#7D6E64" stroke="white" stroke-width="0.5"/>
+								</svg>
+							</div>
+							<div class="steps__name text-center">
+								<!-- <span class="steps__number">01.</span> -->
+								<span class="steps__text ">Ремонтные работы и материалы</span>
+							</div>
+							<span class="steps__number text-center franchise__cost">120 000 руб.</span>
+						</div>
+						<div class="col-lg-3 col-md-6 franshise-list__item">
+							<div class="steps__icon">
+								<img src="img/gear.png" alt="">
+							</div>
+							<div class="steps__name text-center">
+								<!-- <span class="steps__number">01.</span> -->
+								<span class="steps__text ">Технологическое оборудование</span>
+							</div>
+							<span class="steps__number text-center franchise__cost">240 000 руб.</span>
+						</div>
+						<div class="col-lg-3 col-md-6 franshise-list__item">
+							<div class="steps__icon">
+								<svg width="85" height="85" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M7.69355 65.3831H43.7137V79.9839C43.7137 82.2669 45.5718 84.125 47.8548 84.125H79.9839C82.2669 84.125 84.125 82.2669 84.125 79.9839V31.7903C84.125 29.5073 82.2669 27.6492 79.9839 27.6492H78.7702V11.7097V11.5847H78.6452H14.5121V1V0.875H14.3871H7.69355C3.93391 0.875 0.875 3.93391 0.875 7.69355V58.5645C0.875 62.3242 3.93391 65.3831 7.69355 65.3831ZM14.3871 54.6734H14.5121V54.5484V14.5121H75.8427V27.6492H48.358C46.0691 21.29 39.9723 16.9395 33.129 16.9395C24.2015 16.9395 16.9395 24.2015 16.9395 33.129C16.9395 42.0566 24.2015 49.3186 33.129 49.3186C37.0555 49.3186 40.8013 47.8785 43.7137 45.3616V62.4556H7.69355C5.54861 62.4556 3.80242 60.7095 3.80242 58.5645C3.80242 56.4196 5.54861 54.6734 7.69355 54.6734H14.3871ZM3.80242 7.69355C3.80242 5.54861 5.54861 3.80242 7.69355 3.80242H11.5847V51.746H7.69355C6.24788 51.746 4.90614 52.199 3.80242 52.9676V7.69355ZM43.7156 31.6653H34.5927V19.9561C39.5004 20.504 43.7452 23.7659 45.5156 28.3819C44.4615 29.1062 43.7563 30.302 43.7156 31.6653ZM31.6653 46.3093C25.0393 45.5784 19.8669 39.9459 19.8669 33.129C19.8669 26.3122 25.0393 20.6796 31.6653 19.9487V46.3093ZM34.5927 34.5927H43.7137V41.0902C41.508 44.0167 38.2017 45.8929 34.5927 46.2954V34.5927ZM81.1976 79.9839C81.1976 80.6522 80.6522 81.1976 79.9839 81.1976H47.8548C47.1865 81.1976 46.6411 80.6522 46.6411 79.9839V31.7903C46.6411 31.122 47.1865 30.5766 47.8548 30.5766H79.9839C80.6522 30.5766 81.1976 31.122 81.1976 31.7903V79.9839Z" fill="#7D6E64" stroke="#7D6E64" stroke-width="0.25"/>
+									<path d="M49.0688 46.5161V46.6411H49.1938H78.6455H78.7705V46.5161V33.129V33.004H78.6455H49.1938H49.0688V33.129V46.5161ZM51.9963 35.9314H75.843V43.7137H51.9963V35.9314Z" fill="#7D6E64" stroke="#7D6E64" stroke-width="0.25"/>
+									<path d="M70.4878 78.6452V78.7702H70.6128H78.6451H78.7701V78.6452V70.6129V70.4879H78.6451H70.6128H70.4878V70.6129V78.6452ZM73.4152 73.4153H75.8426V75.8428H73.4152V73.4153Z" fill="#7D6E64" stroke="#7D6E64" stroke-width="0.25"/>
+									<path d="M59.7783 78.6452V78.7702H59.9033H67.9356H68.0606V78.6452V70.6129V70.4879H67.9356H59.9033H59.7783V70.6129V78.6452ZM62.7057 73.4153H65.1332V75.8428H62.7057V73.4153Z" fill="#7D6E64" stroke="#7D6E64" stroke-width="0.25"/>
+									<path d="M49.0688 78.6452V78.7702H49.1938H57.2261H57.3511V78.6452V70.6129V70.4879H57.2261H49.1938H49.0688V70.6129V78.6452ZM51.9963 73.4153H54.4237V75.8428H51.9963V73.4153Z" fill="#7D6E64" stroke="#7D6E64" stroke-width="0.25"/>
+									<path d="M70.4878 67.9355V68.0605H70.6128H78.6451H78.7701V67.9355V59.9033V59.7783H78.6451H70.6128H70.4878V59.9033V67.9355ZM73.4152 62.7057H75.8426V65.1331H73.4152V62.7057Z" fill="#7D6E64" stroke="#7D6E64" stroke-width="0.25"/>
+									<path d="M59.7783 67.9355V68.0605H59.9033H67.9356H68.0606V67.9355V59.9033V59.7783H67.9356H59.9033H59.7783V59.9033V67.9355ZM62.7057 62.7057H65.1332V65.1331H62.7057V62.7057Z" fill="#7D6E64" stroke="#7D6E64" stroke-width="0.25"/>
+									<path d="M49.0688 67.9355V68.0605H49.1938H57.2261H57.3511V67.9355V59.9033V59.7783H57.2261H49.1938H49.0688V59.9033V67.9355ZM51.9963 62.7057H54.4237V65.1331H51.9963V62.7057Z" fill="#7D6E64" stroke="#7D6E64" stroke-width="0.25"/>
+									<path d="M70.4878 57.2258V57.3508H70.6128H78.6451H78.7701V57.2258V49.1935V49.0685H78.6451H70.6128H70.4878V49.1935V57.2258ZM73.4152 51.996H75.8426V54.4234H73.4152V51.996Z" fill="#7D6E64" stroke="#7D6E64" stroke-width="0.25"/>
+									<path d="M59.7783 57.2258V57.3508H59.9033H67.9356H68.0606V57.2258V49.1935V49.0685H67.9356H59.9033H59.7783V49.1935V57.2258ZM62.7057 51.996H65.1332V54.4234H62.7057V51.996Z" fill="#7D6E64" stroke="#7D6E64" stroke-width="0.25"/>
+									<path d="M49.0688 57.2258V57.3508H49.1938H57.2261H57.3511V57.2258V49.1935V49.0685H57.2261H49.1938H49.0688V49.1935V57.2258ZM51.9963 51.996H54.4237V54.4234H51.9963V51.996Z" fill="#7D6E64" stroke="#7D6E64" stroke-width="0.25"/>
+									<path d="M54.5483 16.9395H54.4233V17.0645V19.7419V19.8669H54.5483H73.2903H73.4153V19.7419V17.0645V16.9395H73.2903H54.5483Z" fill="#7D6E64" stroke="#7D6E64" stroke-width="0.25"/>
+									<path d="M51.8711 22.2944H51.7461V22.4194V25.0968V25.2218H51.8711H73.2904H73.4154V25.0968V22.4194V22.2944H73.2904H51.8711Z" fill="#7D6E64" stroke="#7D6E64" stroke-width="0.25"/>
+								</svg>
+							</div>
+							<div class="steps__name text-center">
+								<!-- <span class="steps__number">01.</span> -->
+								<span class="steps__text ">Административные расходы</span>
+							</div>
+							<span class="steps__number text-center franchise__cost">50 000 руб.</span>
+						</div>
+						<div class="col-lg-3 col-md-6 franshise-list__item">
+							<div class="steps__icon">
+								<img src="img/hand.png" alt="">
+							</div>
+							<div class="steps__name text-center">
+								<!-- <span class="steps__number">01.</span> -->
+								<span class="steps__text ">Паушальный <br>взнос</span>
+							</div>
+							<span class="steps__number text-center franchise__cost">89 000 руб.</span>
+						</div>
+						
+					</div>
+				</div>
+				<div class="colab-mark substrate franchise-mark">Investments</div>
+			</section>
+			<section class="payback">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6 col-md-12">
+							<h2 class="neon neon_white payback__title">окупаемость франшизы </h2>
+						</div>
+						<div class="col-lg-6 col-md-12">
+							<ul class="checks franchise-checks">
+								<li class="checks__item">
+									<span class="checks__icon">
+										<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+											<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+										</svg>
+									</span>
+									<span class="checks__text">Окупаемость проекта составляет от 12 до 24 месяцев</span>
+								</li>
+								<li class="checks__item">
+									<span class="checks__icon">
+										<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+											<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+										</svg>
+									</span>
+									<span class="checks__text">Срок действия договора: 3 года с возможностью продления</span>
+								</li>
+								<li class="checks__item">
+									<span class="checks__icon">
+										<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+											<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+										</svg>
+									</span>
+									<span class="checks__text">Ваша чистая прибыль: от 50 000 руб. в месяц</span>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+			</section>
+			<section class="andrew">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6 col-md-12">
+							<div class="special__bg andrew__video">
+								<img src="img/andrew.jpg" alt="" class="special__picture">
+								<span class="play">
+									<svg width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M33 8C19.2142 8 8 19.2152 8 33C8 46.7848 19.2142 58 33 58C46.7858 58 58 46.7848 58 33C58 19.2152 46.7858 8 33 8ZM33 55.9167C20.3637 55.9167 10.0833 45.6363 10.0833 33C10.0833 20.3637 20.3637 10.0833 33 10.0833C45.6363 10.0833 55.9167 20.3637 55.9167 33C55.9167 45.6363 45.6363 55.9167 33 55.9167Z" fill="white"/>
+										<path opacity="0.2" d="M33 0C14.8027 0 0 14.8041 0 33C0 51.1959 14.8027 66 33 66C51.1973 66 66 51.1959 66 33C66 14.8041 51.1973 0 33 0ZM33 63.25C16.32 63.25 2.74996 49.68 2.74996 33C2.74996 16.32 16.32 2.74996 33 2.74996C49.68 2.74996 63.25 16.32 63.25 33C63.25 49.68 49.68 63.25 33 63.25Z" fill="white"/>
+										<path d="M42.9386 32.1241L28.3553 22.7491C28.0358 22.5407 27.6229 22.5294 27.2933 22.7105C26.9575 22.8936 26.75 23.2436 26.75 23.625V42.375C26.75 42.7565 26.9575 43.1065 27.2933 43.2896C27.4479 43.374 27.6208 43.4167 27.7917 43.4167C27.987 43.4167 28.1844 43.3617 28.3553 43.2509L42.9386 33.8759C43.2356 33.6847 43.4167 33.354 43.4167 33C43.4167 32.646 43.2356 32.3155 42.9386 32.1241ZM28.8333 40.4666V25.5334L40.4483 33L28.8333 40.4666Z" fill="white"/>
+									</svg>
+								</span>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-12">
+							<h2 class="title text-left andrew__title">Андрей Васильев</h2>
+							<p class="text andrew__text">Основатель и владелец проекта</p>
+							<p class="andrew__note text">
+								<svg class="andrew__mark" width="22" height="43" viewBox="0 0 22 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M0 0V42.75L21.375 21.375V0H0Z" fill="#C4C4C4" fill-opacity="0.3"/>
+								</svg>
+								<svg class="andrew__mark" width="22" height="43" viewBox="0 0 22 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M0 0V42.75L21.375 21.375V0H0Z" fill="#C4C4C4" fill-opacity="0.3"/>
+								</svg>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.
+							</p>
+						</div>
+					</div>
+					
+				</div>
+			</section>
+			<section class="market">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-md-12 col-lg-3 market__top">
+							<h2 class="neon">рынок растет</h2>
+						</div>
+						<div class="col-md-12 col-lg-9">
+							<ul class="market-list">
+								<li class="market-list__item">
+									<p class="counter market__counter">2000+</p>
+									<p class="text market__bold">потенциальных клиентов  заказывают двери в городе каждый месяц</p>
+								</li>
+								<li class="market-list__item">
+									<p class="counter market__counter">2000+</p>
+									<p class="text market__bold">потенциальных клиентов  заказывают двери в городе каждый месяц</p>
+								</li>
+								<li class="market-list__item">
+									<p class="counter market__counter">2000+</p>
+									<p class="text market__bold">потенциальных клиентов  заказывают двери в городе каждый месяц</p>
+								</li>
+								<li class="market-list__item">
+									<p class="counter market__counter">2000+</p>
+									<p class="text market__bold">потенциальных клиентов  заказывают двери в городе каждый месяц</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+			</section>
+			<section class="diagram">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h2 class="title">График выхода на окупаемость</h2>
+						</div>
+					</div>
+					<div class="row diagram-show">
+						<div class="col-md-12 offset-lg-1 col-lg-10">
+							<ul class="diagram-grid">
+								<li class="diagram-grid__item">
+									<div class="diagram__shadow">
+										<p class="diagram__name">
+											1 квартал
+										</p>
+										<p class="diagram__text text">Покупка франшизы, открытие и запуск производства</p>
+									</div>
+									<div class="round diagram__round round-left">
+										<div class="round-2"></div>
+									</div>
+								</li>
+								<li class="diagram-grid__item justify-content-end">
+									
+									<div class="round diagram__round">
+										<div class="round-2 round-right"></div>
+									</div>
+									<div class="diagram__shadow">
+										<p class="diagram__name">
+											2 квартал
+										</p>
+										<p class="diagram__text text">Покупка франшизы, открытие и запуск производства</p>
+									</div>
+								</li>
+								<li class="diagram-grid__item">
+									<div class="diagram__shadow">
+										<p class="diagram__name">
+											3 квартал
+										</p>
+										<p class="diagram__text text">Покупка франшизы, открытие и запуск производства</p>
+									</div>
+									<div class="round diagram__round round-left">
+										<div class="round-2"></div>
+									</div>
+								</li>
+								<li class="diagram-grid__item justify-content-end">
+									
+									<div class="round diagram__round round-right">
+										<div class="round-2"></div>
+									</div>
+									<div class="diagram__shadow">
+										<p class="diagram__name">
+											4 квартал
+										</p>
+										<p class="diagram__text text">Покупка франшизы, открытие и запуск производства</p>
+									</div>
+								</li>
+								<li class="diagram-grid__item">
+									<div class="diagram__shadow">
+										<p class="diagram__name">
+											5 квартал
+										</p>
+										<p class="diagram__text text">Покупка франшизы, открытие и запуск производства</p>
+									</div>
+									<div class="round diagram__round round-left">
+										<div class="round-2"></div>
+									</div>
+								</li>
+								<li class="diagram-grid__item justify-content-end">
+									
+									<div class="round diagram__round round-right">
+										<div class="round-2"></div>
+									</div>
+									<div class="diagram__shadow">
+										<p class="diagram__name">
+											6 квартал
+										</p>
+										<p class="diagram__text text">Покупка франшизы, открытие и запуск производства</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row diagram-hidden">
+						<div class="col-12">
+							<div class="swiper-container_diagram">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="diagram-grid__item">
+											<div class="diagram__shadow">
+												<p class="diagram__name">
+													1 квартал
+												</p>
+												<p class="diagram__text text">Покупка франшизы, открытие и запуск производства</p>
+											</div>
+											<div class="round diagram__round round-left">
+												<div class="round-2"></div>
+											</div>
+										</div>
+										<div class="diagram-grid__item">
+											<div class="diagram__shadow">
+												<p class="diagram__name">
+													2 квартал
+												</p>
+												<p class="diagram__text text">Покупка франшизы, открытие и запуск производства</p>
+											</div>
+											<div class="round diagram__round round-left">
+												<div class="round-2"></div>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="diagram-grid__item">
+											<div class="diagram__shadow">
+												<p class="diagram__name">
+													3 квартал
+												</p>
+												<p class="diagram__text text">Покупка франшизы, открытие и запуск производства</p>
+											</div>
+											<div class="round diagram__round round-left">
+												<div class="round-2"></div>
+											</div>
+										</div>
+										<div class="diagram-grid__item">
+											<div class="diagram__shadow">
+												<p class="diagram__name">
+													4 квартал
+												</p>
+												<p class="diagram__text text">Покупка франшизы, открытие и запуск производства</p>
+											</div>
+											<div class="round diagram__round round-left">
+												<div class="round-2"></div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+								<!-- Add Arrows -->
+
+							</div>
+
+							<div class="swiper-button-prev">
+								<svg width="47" height="8" viewBox="0 0 47 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M0.646446 3.64645C0.451183 3.84171 0.451183 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646446 3.64645ZM47 3.5L1 3.5V4.5L47 4.5V3.5Z" fill="#564F48"/>
+								</svg>
+
+							</div>
+							<div class="swiper-button-next">
+								<svg width="47" height="8" viewBox="0 0 47 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M46.3536 4.35355C46.5488 4.15829 46.5488 3.84171 46.3536 3.64645L43.1716 0.464466C42.9763 0.269204 42.6597 0.269204 42.4645 0.464466C42.2692 0.659728 42.2692 0.976311 42.4645 1.17157L45.2929 4L42.4645 6.82843C42.2692 7.02369 42.2692 7.34027 42.4645 7.53553C42.6597 7.7308 42.9763 7.7308 43.1716 7.53553L46.3536 4.35355ZM0 4.5L46 4.5V3.5L0 3.5L0 4.5Z" fill="#564F48"/>
+								</svg>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="structure">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="title title_white structure__title">Что входит в франшизу</h2>
+					</div>
+				</div>
+				<div class="row structure-show">
+					<div class="col-md-6 col-lg-4">
+						<ul class="checks franchise-checks structure__checks">
+							<li class="checks__item">
+								<span class="checks__icon">
+									<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+										<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+									</svg>
+								</span>
+								<span class="checks__text">Обучение франчайзи и всех сотрудников</span>
+							</li>
+							<li class="checks__item">
+								<span class="checks__icon">
+									<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+										<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+									</svg>
+								</span>
+								<span class="checks__text">Контроль качества и сервисе через видеонаблюдение</span>
+							</li>
+							<li class="checks__item">
+								<span class="checks__icon">
+									<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+										<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+									</svg>
+								</span>
+								<span class="checks__text">Поставка оборудования для производства дверей</span>
+							</li>
+
+						</ul>
+					</div>
+					<div class="col-md-6 col-lg-4">
+						<ul class="checks franchise-checks structure__checks">
+							<li class="checks__item">
+								<span class="checks__icon">
+									<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+										<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+									</svg>
+								</span>
+								<span class="checks__text">Обучение франчайзи и всех сотрудников</span>
+							</li>
+							<li class="checks__item">
+								<span class="checks__icon">
+									<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+										<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+									</svg>
+								</span>
+								<span class="checks__text">Контроль качества и сервисе через видеонаблюдение</span>
+							</li>
+							<li class="checks__item">
+								<span class="checks__icon">
+									<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+										<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+									</svg>
+								</span>
+								<span class="checks__text">Поставка оборудования для производства дверей</span>
+							</li>
+
+						</ul>
+					</div>
+					<div class="col-md-12 col-lg-4">
+						<ul class="checks franchise-checks structure__checks">
+							<li class="checks__item">
+								<span class="checks__icon">
+									<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+										<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+									</svg>
+								</span>
+								<span class="checks__text">Обучение франчайзи и всех сотрудников</span>
+							</li>
+							<li class="checks__item">
+								<span class="checks__icon">
+									<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+										<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+									</svg>
+								</span>
+								<span class="checks__text">Контроль качества и сервисе через видеонаблюдение</span>
+							</li>
+							<li class="checks__item">
+								<span class="checks__icon">
+									<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+										<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+									</svg>
+								</span>
+								<span class="checks__text">Поставка оборудования для производства дверей</span>
+							</li>
+
+						</ul>
+					</div>
+
+				</div>
+
+				<div class="row structure-hidden">
+					<div class="col-12">
+						<div class="swiper-container_structure">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<ul class="checks franchise-checks structure__checks">
+										<li class="checks__item">
+											<span class="checks__icon">
+												<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+													<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+												</svg>
+											</span>
+											<span class="checks__text">Обучение франчайзи и всех сотрудников</span>
+										</li>
+										<li class="checks__item">
+											<span class="checks__icon">
+												<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+													<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+												</svg>
+											</span>
+											<span class="checks__text">Контроль качества и сервисе через видеонаблюдение</span>
+										</li>
+										<li class="checks__item">
+											<span class="checks__icon">
+												<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+													<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+												</svg>
+											</span>
+											<span class="checks__text">Поставка оборудования для производства дверей</span>
+										</li>
+
+									</ul>
+								</div>
+								<div class="swiper-slide">
+									<ul class="checks franchise-checks structure__checks">
+										<li class="checks__item">
+											<span class="checks__icon">
+												<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+													<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+												</svg>
+											</span>
+											<span class="checks__text">Обучение франчайзи и всех сотрудников</span>
+										</li>
+										<li class="checks__item">
+											<span class="checks__icon">
+												<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+													<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+												</svg>
+											</span>
+											<span class="checks__text">Контроль качества и сервисе через видеонаблюдение</span>
+										</li>
+										<li class="checks__item">
+											<span class="checks__icon">
+												<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+													<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+												</svg>
+											</span>
+											<span class="checks__text">Поставка оборудования для производства дверей</span>
+										</li>
+
+									</ul>
+								</div>
+								<div class="swiper-slide">
+									<ul class="checks franchise-checks structure__checks">
+										<li class="checks__item">
+											<span class="checks__icon">
+												<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+													<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+												</svg>
+											</span>
+											<span class="checks__text">Обучение франчайзи и всех сотрудников</span>
+										</li>
+										<li class="checks__item">
+											<span class="checks__icon">
+												<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+													<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+												</svg>
+											</span>
+											<span class="checks__text">Контроль качества и сервисе через видеонаблюдение</span>
+										</li>
+										<li class="checks__item">
+											<span class="checks__icon">
+												<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M19.0476 9.41669V19.9167H2.38097V3.25H17.2262L19.8453 0.86908H0V22.2977H21.4286V7.22623L19.0476 9.41669Z" fill="white"></path>
+													<path d="M23.2974 0L10.3808 11.7381L6.33315 7.70241L4.76172 9.27384L10.4879 15L24.9998 1.66669L23.2974 0Z" fill="white"></path>
+												</svg>
+											</span>
+											<span class="checks__text">Поставка оборудования для производства дверей</span>
+										</li>
+
+									</ul>
+								</div>
+
+								<!-- Add Arrows -->
+
+							</div>
+
+							<div class="swiper-button-prev">
+								<svg width="47" height="8" viewBox="0 0 47 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M0.646446 3.64645C0.451183 3.84171 0.451183 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646446 3.64645ZM47 3.5L1 3.5V4.5L47 4.5V3.5Z" fill="white"/>
+								</svg>
+
+							</div>
+							<div class="swiper-button-next">
+								<svg width="47" height="8" viewBox="0 0 47 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M46.3536 4.35355C46.5488 4.15829 46.5488 3.84171 46.3536 3.64645L43.1716 0.464466C42.9763 0.269204 42.6597 0.269204 42.4645 0.464466C42.2692 0.659728 42.2692 0.976311 42.4645 1.17157L45.2929 4L42.4645 6.82843C42.2692 7.02369 42.2692 7.34027 42.4645 7.53553C42.6597 7.7308 42.9763 7.7308 43.1716 7.53553L46.3536 4.35355ZM0 4.5L46 4.5V3.5L0 3.5L0 4.5Z" fill="white"/>
+								</svg>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="examples">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h2 class="title examples__title">Примеры открытых франшиз</h2>
+						</div>
+
+					</div>
+					<div class="row examples-show">
+						<div class="col-md-12">
+							<ul class="examples-grid">
+								<li class="examples-grid__item">
+									<img src="img/examples/1.jpg" alt="">
+									<div class="examples-grid__bg">
+										<p class="examples__name">Фабрика дверей №1</p>
+										<p class="examples__thin">г. Нижнегорск, ул. Прямая, 23</p>
+										<p class="examples__text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+										<a href="#" class="go-site">
+											<span>Перейти на сайт</span>
+											<svg width="47" height="8" viewBox="0 0 47 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M46.3536 4.35355C46.5488 4.15829 46.5488 3.84171 46.3536 3.64645L43.1716 0.464466C42.9763 0.269204 42.6597 0.269204 42.4645 0.464466C42.2692 0.659728 42.2692 0.976311 42.4645 1.17157L45.2929 4L42.4645 6.82843C42.2692 7.02369 42.2692 7.34027 42.4645 7.53553C42.6597 7.7308 42.9763 7.7308 43.1716 7.53553L46.3536 4.35355ZM0 4.5L46 4.5V3.5L0 3.5L0 4.5Z" fill="#564F48"/>
+											</svg>
+										</a>
+									</div>
+								</li>
+								<li class="examples-grid__item">
+									<div class="examples-grid__bg">
+										<p class="examples__name">Фабрика дверей №2</p>
+										<p class="examples__thin">г. Нижнегорск, ул. Прямая, 23</p>
+										<p class="examples__text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+										<a href="#" class="go-site">
+											<span>Перейти на сайт</span>
+											<svg width="47" height="8" viewBox="0 0 47 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M46.3536 4.35355C46.5488 4.15829 46.5488 3.84171 46.3536 3.64645L43.1716 0.464466C42.9763 0.269204 42.6597 0.269204 42.4645 0.464466C42.2692 0.659728 42.2692 0.976311 42.4645 1.17157L45.2929 4L42.4645 6.82843C42.2692 7.02369 42.2692 7.34027 42.4645 7.53553C42.6597 7.7308 42.9763 7.7308 43.1716 7.53553L46.3536 4.35355ZM0 4.5L46 4.5V3.5L0 3.5L0 4.5Z" fill="#564F48"/>
+											</svg>
+										</a>
+									</div>
+									<img src="img/examples/2.jpg" alt="">
+
+								</li>
+								<li class="examples-grid__item">
+									<img src="img/examples/3.jpg" alt="">
+									<div class="examples-grid__bg">
+										<p class="examples__name">Фабрика дверей №3</p>
+										<p class="examples__thin">г. Нижнегорск, ул. Прямая, 23</p>
+										<p class="examples__text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+										<a href="#" class="go-site">
+											<span>Перейти на сайт</span>
+											<svg width="47" height="8" viewBox="0 0 47 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M46.3536 4.35355C46.5488 4.15829 46.5488 3.84171 46.3536 3.64645L43.1716 0.464466C42.9763 0.269204 42.6597 0.269204 42.4645 0.464466C42.2692 0.659728 42.2692 0.976311 42.4645 1.17157L45.2929 4L42.4645 6.82843C42.2692 7.02369 42.2692 7.34027 42.4645 7.53553C42.6597 7.7308 42.9763 7.7308 43.1716 7.53553L46.3536 4.35355ZM0 4.5L46 4.5V3.5L0 3.5L0 4.5Z" fill="#564F48"/>
+											</svg>
+										</a>
+									</div>
+								</li>
+								<li class="examples-grid__item">
+									<div class="examples-grid__bg">
+										<p class="examples__name">Фабрика дверей №4</p>
+										<p class="examples__thin">г. Нижнегорск, ул. Прямая, 23</p>
+										<p class="examples__text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+										<a href="#" class="go-site">
+											<span>Перейти на сайт</span>
+											<svg width="47" height="8" viewBox="0 0 47 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M46.3536 4.35355C46.5488 4.15829 46.5488 3.84171 46.3536 3.64645L43.1716 0.464466C42.9763 0.269204 42.6597 0.269204 42.4645 0.464466C42.2692 0.659728 42.2692 0.976311 42.4645 1.17157L45.2929 4L42.4645 6.82843C42.2692 7.02369 42.2692 7.34027 42.4645 7.53553C42.6597 7.7308 42.9763 7.7308 43.1716 7.53553L46.3536 4.35355ZM0 4.5L46 4.5V3.5L0 3.5L0 4.5Z" fill="#564F48"/>
+											</svg>
+										</a>
+									</div>
+									<img src="img/examples/4.jpg" alt="">
+
+								</li>
+
+							</ul>
+						</div>
+					</div>
+					<div class="row examples-hidden">
+						<div class="col-12">
+							<div class="swiper-container_examples">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="examples-grid__item">
+											<img src="img/examples/1.jpg" alt="">
+											<div class="examples-grid__bg">
+												<p class="examples__name">Фабрика дверей №1</p>
+												<p class="examples__thin">г. Нижнегорск, ул. Прямая, 23</p>
+												<p class="examples__text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+												<a href="#" class="go-site">
+													<span>Перейти на сайт</span>
+													<svg width="47" height="8" viewBox="0 0 47 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M46.3536 4.35355C46.5488 4.15829 46.5488 3.84171 46.3536 3.64645L43.1716 0.464466C42.9763 0.269204 42.6597 0.269204 42.4645 0.464466C42.2692 0.659728 42.2692 0.976311 42.4645 1.17157L45.2929 4L42.4645 6.82843C42.2692 7.02369 42.2692 7.34027 42.4645 7.53553C42.6597 7.7308 42.9763 7.7308 43.1716 7.53553L46.3536 4.35355ZM0 4.5L46 4.5V3.5L0 3.5L0 4.5Z" fill="#564F48"/>
+													</svg>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="examples-grid__item">
+											<div class="examples-grid__bg">
+												<p class="examples__name">Фабрика дверей №2</p>
+												<p class="examples__thin">г. Нижнегорск, ул. Прямая, 23</p>
+												<p class="examples__text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+												<a href="#" class="go-site">
+													<span>Перейти на сайт</span>
+													<svg width="47" height="8" viewBox="0 0 47 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M46.3536 4.35355C46.5488 4.15829 46.5488 3.84171 46.3536 3.64645L43.1716 0.464466C42.9763 0.269204 42.6597 0.269204 42.4645 0.464466C42.2692 0.659728 42.2692 0.976311 42.4645 1.17157L45.2929 4L42.4645 6.82843C42.2692 7.02369 42.2692 7.34027 42.4645 7.53553C42.6597 7.7308 42.9763 7.7308 43.1716 7.53553L46.3536 4.35355ZM0 4.5L46 4.5V3.5L0 3.5L0 4.5Z" fill="#564F48"/>
+													</svg>
+												</a>
+											</div>
+											<img src="img/examples/2.jpg" alt="">
+
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="examples-grid__item">
+											<img src="img/examples/3.jpg" alt="">
+											<div class="examples-grid__bg">
+												<p class="examples__name">Фабрика дверей №3</p>
+												<p class="examples__thin">г. Нижнегорск, ул. Прямая, 23</p>
+												<p class="examples__text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+												<a href="#" class="go-site">
+													<span>Перейти на сайт</span>
+													<svg width="47" height="8" viewBox="0 0 47 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M46.3536 4.35355C46.5488 4.15829 46.5488 3.84171 46.3536 3.64645L43.1716 0.464466C42.9763 0.269204 42.6597 0.269204 42.4645 0.464466C42.2692 0.659728 42.2692 0.976311 42.4645 1.17157L45.2929 4L42.4645 6.82843C42.2692 7.02369 42.2692 7.34027 42.4645 7.53553C42.6597 7.7308 42.9763 7.7308 43.1716 7.53553L46.3536 4.35355ZM0 4.5L46 4.5V3.5L0 3.5L0 4.5Z" fill="#564F48"/>
+													</svg>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="examples-grid__item">
+											<div class="examples-grid__bg">
+												<p class="examples__name">Фабрика дверей №4</p>
+												<p class="examples__thin">г. Нижнегорск, ул. Прямая, 23</p>
+												<p class="examples__text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+												<a href="#" class="go-site">
+													<span>Перейти на сайт</span>
+													<svg width="47" height="8" viewBox="0 0 47 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M46.3536 4.35355C46.5488 4.15829 46.5488 3.84171 46.3536 3.64645L43.1716 0.464466C42.9763 0.269204 42.6597 0.269204 42.4645 0.464466C42.2692 0.659728 42.2692 0.976311 42.4645 1.17157L45.2929 4L42.4645 6.82843C42.2692 7.02369 42.2692 7.34027 42.4645 7.53553C42.6597 7.7308 42.9763 7.7308 43.1716 7.53553L46.3536 4.35355ZM0 4.5L46 4.5V3.5L0 3.5L0 4.5Z" fill="#564F48"/>
+													</svg>
+												</a>
+											</div>
+											<img src="img/examples/4.jpg" alt="">
+
+										</div>
+									</div>
+									
+									<!-- Add Arrows -->
+									
+								</div>
+
+								<div class="swiper-button-prev">
+									<svg width="47" height="8" viewBox="0 0 47 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M0.646446 3.64645C0.451183 3.84171 0.451183 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646446 3.64645ZM47 3.5L1 3.5V4.5L47 4.5V3.5Z" fill="#564F48"/>
+									</svg>
+
+								</div>
+								<div class="swiper-button-next">
+									<svg width="47" height="8" viewBox="0 0 47 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M46.3536 4.35355C46.5488 4.15829 46.5488 3.84171 46.3536 3.64645L43.1716 0.464466C42.9763 0.269204 42.6597 0.269204 42.4645 0.464466C42.2692 0.659728 42.2692 0.976311 42.4645 1.17157L45.2929 4L42.4645 6.82843C42.2692 7.02369 42.2692 7.34027 42.4645 7.53553C42.6597 7.7308 42.9763 7.7308 43.1716 7.53553L46.3536 4.35355ZM0 4.5L46 4.5V3.5L0 3.5L0 4.5Z" fill="#564F48"/>
+									</svg>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="go-constructor">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-md-7">
+							<h2 class="title title_small">
+								Узнать подробности и начать зарабатывать от 1 500 000 руб. в год
+							</h2>
+							<p class="text">Закажите бесплатный просчет франшизы в вашем городе</p>
+						</div>
+						<div class="offset-md-1 col-md-4 text-right">
+							<a href="#" class="button button_white">Заказать просчет</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-6 col-md-2 col-lg-3">
+						<img src="img/logo_2.png" alt="">
+						<div class="copy">© 2021 DEFT</div>
+					</div>
+					<div class="d-none d-md-block col-md-4 col-lg-6">
+						<ul class="footer-menu">
+							<li class="footer__item">
+								<a href="catalog.html" class="footer__link">Каталог</a>
+							</li>
+							<li class="footer__item">
+								<a href="services.html" class="footer__link">Услуги</a>
+							</li>
+							<li class="footer__item">
+								<a href="franchise.html" class="footer__link">Франшиза</a>
+							</li>
+							<li class="footer__item">
+								<a href="contacts.html" class="footer__link">Контакты</a>
+							</li>
+							<li class="footer__item">
+								<a href="blog.html" class="footer__link">Блог</a>
+							</li>
+							<li class="footer__item">
+								<a href="about.html" class="footer__link">О нас</a>
+							</li>
+							<li class="footer__item">
+								<a href="coop.html" class="footer__link">Сотрудничество</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-6 col-md-6 col-lg-3 text-right">
+						<div class="contacts footer__contacts">
+							<a href="tel: +75698565489" class="contacts__phone">+7 569 856 54 89</a>
+							<a href="#" class="contacts__icon">
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M0 0V20H20V0H0ZM18.0338 3.52425L15.3039 16.6557C15.2381 16.9673 14.8782 17.1077 14.6193 16.919L10.8931 14.2155C10.6649 14.0531 10.3577 14.0619 10.1426 14.2374L8.07549 15.9184C7.8341 16.1159 7.47421 16.0061 7.38205 15.7077L5.94689 11.095L2.2427 9.71253C1.86526 9.57209 1.86526 9.04104 2.23831 8.8962L17.4501 3.02831C17.7705 2.90542 18.104 3.18631 18.0338 3.52425Z" fill="white"></path>
+									<path d="M13.3905 7.11434L8.9358 11.253C8.7778 11.3979 8.67685 11.5954 8.65052 11.806L8.49691 12.9296C8.47497 13.0788 8.2643 13.0964 8.2248 12.9471L7.64108 10.8975C7.57525 10.6649 7.67181 10.4148 7.87808 10.2875L13.2764 6.96512C13.3729 6.90368 13.4739 7.03534 13.3905 7.11434Z" fill="white"></path>
+								</svg>
+							</a>
+							<a href="#" class="contacts__icon contacts__icon_2">
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M13.5659 11.7665L13.4956 12.1045C13.4122 12.4863 13.1884 12.8242 12.8593 13.0349C12.4423 13.2982 11.9069 13.4299 11.2222 13.2368C9.10239 12.6355 7.89985 11.2311 7.25908 10.3533C6.61392 9.47553 6.36814 8.59776 6.52614 7.88238C6.63586 7.3996 6.98697 7.03094 7.20641 6.84222C7.31613 6.75005 7.45219 6.70177 7.59702 6.71055L8.04907 6.73689C8.13685 6.74127 8.21585 6.79833 8.25096 6.87733L8.90929 8.4222C8.9444 8.50559 8.93123 8.60215 8.86979 8.66798L8.29485 9.3307C8.24657 9.38336 8.24218 9.46236 8.2729 9.52381C9.02778 10.9809 10.4103 11.5602 10.8228 11.7051C10.893 11.7314 10.972 11.7051 11.0159 11.648L11.6172 10.8668C11.683 10.779 11.8015 10.7527 11.9025 10.7966L13.4342 11.5032C13.5351 11.5515 13.5878 11.6612 13.5659 11.7665Z" fill="white"></path>
+									<path d="M0 0V20H20V0H0ZM10.011 16.9717C8.81282 16.9717 7.6366 16.6645 6.59644 16.0808L3.00636 17.0024L3.98508 13.5221C3.35308 12.4512 3.02392 11.2355 3.02392 9.98464C3.02392 6.13123 6.15756 2.99759 10.011 2.99759C13.8644 2.99759 16.998 6.13123 16.998 9.98464C16.998 13.8381 13.86 16.9717 10.011 16.9717Z" fill="white"></path>
+								</svg>
+							</a>
+						</div>
+						<p class="adress">Москва, ул. Саксаганского, 121</p>
+						<p class="adress">help-center@website.com</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+
+	<!--   SCRIPTS  -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="js/jquery.maskedinput.min.js"></script>
+
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+	<script>
+		var swiper = new Swiper('.swiper-container_diagram', {
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+		});
+
+
+		var swiper = new Swiper('.swiper-container_structure', {
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+		});
+
+		var swiper = new Swiper('.swiper-container_examples', {
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+		});
+	</script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+	<script src="js/main.js"></script>
+</body>
+</html>
